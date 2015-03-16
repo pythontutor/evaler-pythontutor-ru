@@ -67,12 +67,9 @@ class ExecuteResult:
 
 
 def execute_python(code, stdin='', explain=False):
-	code = bytes(code, 'utf-8')
-	stdin = bytes(stdin, 'utf-8')
-
 	this_dir = dirname(__file__)
 
-	with open(this_dir + '/script.py', 'rb') as script_file:
+	with open(this_dir + '/script.py', 'r') as script_file:
 		script = script_file.read()
 		jail_res = jail_code(
 			'python', script,
