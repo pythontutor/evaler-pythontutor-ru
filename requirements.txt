@@ -1,5 +1,3 @@
 Django==1.7.6
 git+https://github.com/dataquestio/codejail.git@bdd17a05057f5a07160ab4344f9f9841e80bc3fa
-distribute==0.6.24
 django-annoying==0.8.1
-wsgiref==0.1.2
