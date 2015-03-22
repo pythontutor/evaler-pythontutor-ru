@@ -1,0 +1,20 @@
+Source: evaler-pythontutor-ru
+Section: python
+Priority: extra
+Maintainer: Anton Blintsov <blint@yandex.ru>
+Standards-Version: 3.9.5
+X-Python3-Version: 3.4
+Build-Depends: 
+	python3,
+	debhelper (>= 9),
+	python3-setuptools,
+	git,
+
+Package: evaler-pythontutor-ru
+Architecture: any
+Depends:
+    ${python3:Depends},
+    ${misc:Depends},
+    python3-virtualenv,
+Description: Django-based evaler for pythontutor-ru
+
