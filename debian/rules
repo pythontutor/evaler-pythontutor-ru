@@ -1,11 +1,18 @@
 #!/usr/bin/make -f
+
+VENV = 'debian/venv'
+
 %:
 	dh $@
 
 override_dh_auto_install:
 	# build venv
-	virtualenv --python=python3.4 debian/venv
+	virtualenv --python=python3.4 $(VENV)
 	debian/venv/bin/pip3 install -r requirements.txt
 	#python setup.py install
-	virtualenv --relocatable debian/venv
+	virtualenv --relocatable $(VENV)
 	dh_auto_install
+
+override_dh_clean:
+	dh_clean
+	rm -rf $(VENV)
