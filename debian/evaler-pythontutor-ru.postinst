@@ -1,0 +1,44 @@
+#!/bin/sh
+# postinst script for evaler-pythontuor-ru
+#
+# see: dh_installdeb(1)
+
+set -e
+
+USER="www-data"
+GROUP="www-data"
+NAME=evaler-pythontutor-ru
+RUN_DIR=/var/run/$NAME
+SRV_DIR=/srv/$NAME
+LOG_DIR=/var/log/$NAME
+
+SANDBOX_USER="pythontutor-sandbox"
+SANDBOX_GROUP="$SANDBOX_USER"
+
+case "$1" in
+    configure)
+	id $SANDBOX_USER 2>&1 > /dev/null || adduser --system $SANDBOX_USER --group
+
+        for DIR in $RUN_DIR $SRV_DIR $LOG_DIR; do
+		mkdir -p $DIR
+		chown -R $USER:$GROUP $DIR
+        done
+
+	supervisorctl reread
+	supervisorctl update
+	
+	apparmor_parser -r /etc/apparmor.d/srv.evaler-pythontutor-ru.sandbox-venv.bin.python 
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument '$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

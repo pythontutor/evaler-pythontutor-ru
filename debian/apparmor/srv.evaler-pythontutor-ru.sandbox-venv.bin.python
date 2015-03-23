@@ -1,0 +1,16 @@
+#include <tunables/global>
+
+/srv/evaler-pythontutor-ru/sandbox-venv/bin/python {
+    #include <abstractions/base>
+    #include <abstractions/python>
+
+    /usr/lib/*.so{,.[0-9]*}                    mrix,
+    /usr/lib/x86_64-linux-gnu/*.so{,.[0-9]*}   mrix,
+
+    /etc/ld.so* r,
+
+    /srv/evaler-pythontutor-ru/sandbox-venv/** mr,
+
+    /tmp/codejail-*/ rix,
+    /tmp/codejail-*/** wrix,
+}

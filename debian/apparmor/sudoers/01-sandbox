@@ -1,0 +1,3 @@
+www-data ALL=(pythontutor-sandbox) SETENV:NOPASSWD:/srv/evaler-pythontutor-ru/sandbox-venv/bin/python
+www-data ALL=(pythontutor-sandbox) SETENV:NOPASSWD:/usr/bin/find
+www-data ALL=(ALL) NOPASSWD:/usr/bin/pkill

@@ -1,1 +1,4 @@
 srv/evaler-pythontutor-ru
+var/run/evaler-pythontutor-ru
+var/log/evaler-pythontutor-ru
+

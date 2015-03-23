@@ -23,5 +23,5 @@ MEM_LIMIT = 16 * MB # process virtual memory limit
 FSIZE_LIMIT = 8 * KB # maximum size of the files, which may be created by the code
 
 
-VENV_PYTHON = '/srv/evaldontevil-python' # path to the python virtual environment, which will be used for code execution
+VENV_PYTHON = '/srv/evaler-pythontutor-ru/sandbox-venv' # path to the python virtual environment, which will be used for code execution
 USER = 'pythontutor-sandbox' # user, which will be used for code execution. Set to None if you don't want to set user or you don't have such permissions
