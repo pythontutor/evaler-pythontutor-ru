@@ -1,6 +1,6 @@
-
-from django.http import HttpResponseBadRequest
 from annoying.decorators import ajax_request
+from django.http import HttpResponseBadRequest
+from django.views.decorators.csrf import csrf_exempt
 
 from evaldontevil import execute_python
 
@@ -10,7 +10,7 @@ def explain_error(exc, code):
     exc['exception_translation'] = msg  # fixme
 
 
-# Create your views here.
+@csrf_exempt
 @ajax_request
 def eval(request):
     # AJAX request

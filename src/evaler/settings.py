@@ -18,6 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'txf!bliqz7x2_2(5cq8v1v9-1b31$dz4m$)m5cxtdfiwvnp1%0'
+# TODO secure debian package with secret key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = ('PYTHONTUTOR_PRODUCTION' not in os.environ)
@@ -51,7 +52,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',  # fixme
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
