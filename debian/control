@@ -18,7 +18,12 @@ Depends:
 	${python3:Depends},
 	supervisor,
 	apparmor,
+	evaler-pythontutor-ru-secret-key,
 Description: Django-based evaler for pythontutor-ru
+
+Package: evaler-pythontutor-ru-secret-key
+Architecture: any
+Description: secret key for pythontutor-ru evaler
 
 Package: evaler-pythontutor-ru-nginx
 Architecture: any
