@@ -1,8 +1,9 @@
-src	/srv/evaler-pythontutor-ru
-debian/venv	/srv/evaler-pythontutor-ru
-debian/sandbox-venv	/srv/evaler-pythontutor-ru
-gunicorn.conf.py	/srv/evaler-pythontutor-ru
+src                     /srv/evaler-pythontutor-ru
+debian/venv             /srv/evaler-pythontutor-ru
+debian/sandbox-venv     /srv/evaler-pythontutor-ru
+gunicorn.conf.py	    /srv/evaler-pythontutor-ru
+run	                    /srv/evaler-pythontutor-ru
 
-debian/supervisor/evaler-pythontutor-ru.conf	/etc/supervisor/conf.d/
-debian/apparmor/sudoers/01-sandbox	/etc/sudoers.d/
-debian/apparmor/srv.evaler-pythontutor-ru.sandbox-venv.bin.python	/etc/apparmor.d/
+debian/supervisor/evaler-pythontutor-ru.conf	                        /etc/supervisor/conf.d/
+debian/apparmor/sudoers/01-sandbox	                                    /etc/sudoers.d/
+debian/apparmor/srv.evaler-pythontutor-ru.sandbox-venv.bin.python	    /etc/apparmor.d/

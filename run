@@ -1,0 +1,15 @@
+#!/bin/sh
+
+GUNICORN_USER=www-data
+
+RUN_DIR=/var/run/evaler-pythontutor-ru
+mkdir -p $RUN_DIR
+chown -R $GUNICORN_USER:$GUNICORN_USER $RUN_DIR
+
+BASE_DIR=/srv/evaler-pythontutor-ru
+VENV_DIR=$BASE_DIR/venv
+GUNICORN_CONF=$BASE_DIR/gunicorn.conf.py
+SRC_DIR=$BASE_DIR/src
+
+cd $SRC_DIR
+sudo -u $GUNICORN_USER $VENV_DIR/bin/python $VENV_DIR/bin/gunicorn evaler.wsgi:application -c $GUNICORN_CONF
