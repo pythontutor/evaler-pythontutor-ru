@@ -12,24 +12,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'txf!bliqz7x2_2(5cq8v1v9-1b31$dz4m$)m5cxtdfiwvnp1%0'
-# TODO secure debian package with secret key
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = ('PYTHONTUTOR_PRODUCTION' not in os.environ)
-TEMPLATE_DEBUG = DEBUG
-NEED_LOGIN = True
-
-if not DEBUG:
-	ALLOWED_HOSTS = ['pythontutor.ru', 'learnpython.ru']
-
 ADMINS = (
     ('Vitaly Pavlenko', 'cxielamiko@gmail.com'),
+    ('Anton Blintsov', 'blint@yandex.ru'),
 )
 MANAGERS = ADMINS
 
@@ -120,12 +105,12 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'handlers': ['console', 'mail_admins'],
+            'handlers': ['console'],
             'level': 'ERROR',
             'propagate': True,
         },
         'pythontutor': {
-            'handlers': ['console', 'mail_admins'],
+            'handlers': ['console'],
             'level': 'INFO',
             'propagate': True,
         },
