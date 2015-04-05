@@ -1,7 +1,7 @@
 server {
-	listen 8000;
+	listen 80;
 
-	server_name pythontutor.ru evaler.pythontutor.ru;
+	server_name www.evaler.pythontutor.ru evaler.pythontutor.ru;
 
 	location /robots.txt {
 		return 200 "User-agent: *\nDisallow: /";
@@ -14,3 +14,9 @@ server {
 		proxy_pass http://unix:/var/run/evaler-pythontutor-ru/sock.sock:;
 	}
 }
+
+#server {
+#	listen 80;
+#	server_name evaler.pythontutor.ru;
+#	return 301 http://www.evaler.pythontutor.ru$request_uri;
+#}
